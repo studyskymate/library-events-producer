@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active:
+    - local
+---
+spring:
+  profiles: local
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      
+---
+spring:
+  profiles: preprod
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+---
+spring:
+  profiles: prod
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      
+      
